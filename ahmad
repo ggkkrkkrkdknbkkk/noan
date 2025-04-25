@@ -1,1 +1,169 @@
-توقفت
+import datetime
+an = datetime.datetime.now()
+an2 = datetime.datetime(2025, 4, 26, 0, 00, 00)#تحكم بالوقت
+if an > an2 or an == an2:
+        exit("انتهئ وقت الاشتراك في الاداه راسل المطور اداه لتشغيلها  :  @M2M0M8 @e_1bo")
+else:
+        pass
+import os    
+from requests import get,post
+from random import choice,randrange
+import requests ,random
+from uuid import uuid4
+import threading
+from faker import Faker
+import requests
+import random
+import uuid
+import os
+import time
+import secrets
+import binascii
+from user_agent import generate_user_agent as gg
+from random import choice as cc
+from random import randrange as rr
+from MedoSigner import Argus, Gorgon, md5, Ladon
+from urllib.parse import urlencode
+def sign(params, payload: str = None, sec_device_id: str = "", cookie: str or None = None, aid: int = 1233, license_id: int = 1611921764, sdk_version_str: str = "2.3.1.i18n", sdk_version: int = 2, platform: int = 19, unix: int = None):
+        x_ss_stub = md5(payload.encode('utf-8')).hexdigest() if payload else None
+        data = payload
+        if not unix:
+            unix = int(time.time())
+        return Gorgon(params, unix, payload, cookie).get_value() | {
+            "x-ladon": Ladon.encrypt(unix, license_id, aid),
+            "x-argus": Argus.get_sign(
+                params, x_ss_stub, unix, platform=platform, aid=aid, license_id=license_id,
+                sec_device_id=sec_device_id, sdk_version=sdk_version_str, sdk_version_int=sdk_version
+            )
+        }
+device_brands = ["samsung", "huawei", "xiaomi", "apple", "oneplus"]
+device_types = ["SM-S928B", "P40", "Mi 11", "iPhone12,1", "OnePlus9"]
+regions = ["AE", "IQ", "US", "FR", "DE"]
+languages = ["ar", "en", "fr", "de"]
+fake_en = Faker('en_US') 
+fake_ru = Faker('ru_RU')
+fake_vi = Faker('vi_VN') 
+fake_th = Faker('th_TH')
+fake_zh = Faker('zh_CN')
+fake_ja = Faker('ja_JP')
+fake_ko = Faker('ko_KR')
+fake_tr = Faker('tr_TR')
+fake_fr = Faker('fr_CH')
+fake_de = Faker('de_CH')
+def sufe():
+        while True:
+            try:
+                keyword = choice([fake_de.name(),fake_fr.name(),fake_tr.name(),fake_ko.name(),fake_ja.name(),fake_zh.name(),fake_en.name(),fake_ru.name(),fake_vi.name(),fake_th.name()])                                              
+                headers = {"User-Agent": f'com.zhiliaoapp.musically/{keyword} (Linux; U; Android {randrange(7,13)}; ar_IQ_#u-nu-latn; ANY-LX2; Build/{keyword}; Cronet/58.0.{randrange(3,9)}.0)'}
+                ttwid=requests.get('https://www.tiktok.com/',headers=headers).cookies.get_dict()['ttwid']
+                sufe = requests.get(f'https://www.tiktok.com/api/search/user/full/?aid=1988&app_language=ar&app_name=tiktok_web&battery_info=0.84&browser_language=ar-IQ&browser_name=Mozilla&browser_online=true&browser_platform=Linux%20aarch64&browser_version=5.0%20%28X11%3B%20Linux%20x86_64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F106.0.0.0%20Safari%2F537.36&channel=tiktok_web&cookie_enabled=true&cursor=0&device_id=7136188745632548358&device_platform=web_pc&focus_state=true&from_page=search&history_len=40&is_fullscreen=false&is_page_visible=true&keyword=zaid&os=linux&priority_region=&referer=&region=IQ&screen_height=796&screen_width=360&tz_name=Asia%2FBaghdad&verifyFp=verify_l9zrjkcx_XSZCv5U7_xzys_4UEP_8m1a_TibJS3izVTHL&webcast_language=ar&msToken=qfFKcpRIe_b543Hfa7buaE31PLWDv6-_TQYqevIaTVOPrUNjuwuHR2z0_cEadFELKqD9p6fLuWk8tgAO9lDmVCUX4vqnit3V4rX9zvJfLCbhs9U2apBgYHmKpXPp6DLl2wZy35z0xD6g6TSu_NIh&X-Bogus=DFSzswVLk-tANxW1S02v8OxPBxgg&_signature=_02B4Z6wo00001IuO8aAAAIDBSFHuFzoQUMCLjvUAAEGFfa',headers=headers)
+                msToken = sufe.cookies.get_dict()['msToken']
+                #print(ttwid)
+                headers = {
+                    'accept': '*/*',
+                    'accept-language': 'en-US,en;q=0.9',
+                    'cache-control': 'no-cache',
+                    'pragma': 'no-cache',
+                    'priority': 'u=1, i',
+                    'sec-ch-ua': '"Not)A;Brand";v="99", "Microsoft Edge";v="127", "Chromium";v="127"',
+                    'sec-ch-ua-mobile': '?0',
+                    'sec-ch-ua-platform': '"Windows"',
+                    'sec-fetch-dest': 'empty',
+                    'sec-fetch-mode': 'cors',
+                    'sec-fetch-site': 'same-origin',
+                    'user-agent': headers["User-Agent"],
+                }
+
+
+                params = {
+    'WebIdLastTime': '1730531328',
+    'aid': '1988',
+    'app_language': random.choice(languages),
+    'app_name': 'tiktok_web',
+    'browser_language': 'en-US',
+    'browser_name': 'Mozilla',
+    'browser_online': 'true',
+    'browser_platform': 'Win32',
+    'browser_version': '5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+    'channel': 'tiktok_web',
+    'cookie_enabled': 'true',
+    'cursor': '0',
+    'data_collection_enabled': 'false',
+    'device_id': str(random.randint(1, 10**19)),
+    'device_platform': 'web_pc',
+    'focus_state': 'true',
+    'from_page': 'search',
+    'history_len': '6',
+    'is_fullscreen': 'false',
+    'is_page_visible': 'true',
+    'keyword': keyword,
+    'odinId': str(binascii.hexlify(os.urandom(8)).decode()),
+    'os': 'windows',
+    'priority_region': '',
+    'referer': 'https://www.tiktok.com/foryou?lang=ar',
+    'region': random.choice(regions),
+    'root_referer': 'https://www.tiktok.com/foryou?lang=ar',
+    'screen_height': '768',
+    'screen_width': '1366',
+    'tz_name': 'Asia/Baghdad',
+    'user_is_login': 'false',
+    'web_search_code': '{"tiktok":{"client_params_x":{"search_engine":{"ies_mt_user_live_video_card_use_libra":1,"mt_search_general_user_live_card":1}},"search_server":{}}}',
+    'webcast_language': 'ar',
+    'msToken': msToken,
+    'X-Bogus': 'DFSzswVYCDvANjact8GusWhPmkvn',
+    '_signature': '_02B4Z6wo00001SX.lwgAAIDBViLVqojoGTEl.5OAAC4I2e',}
+
+
+                see=str(uuid4()).replace('-', '')
+                cookies = {
+                    'tt_chain_token': 'B8VwNlvfpiM7QgiK/erkxw==',
+    'tiktok_webapp_theme': 'light',
+    'delay_guest_mode_vid': '5',
+    'd_ticket': '3454959b072de52dd68afcc6b94d0d9b315e4',
+    'sid_guard': '3c38823da7a919de0122b9fa613c43ff%7C1730531616%7C15552000%7CThu%2C+01-May-2025+07%3A13%3A36+GMT',
+    'uid_tt': see,
+    'uid_tt_ss': see,
+    'sid_tt': see,
+    'sessionid': see,
+    'sessionid_ss': see,
+    'sid_ucp_v1': '1.0.0-KDgxM2Q0YTJmN2I4NDg2MWM2MDg2MWJjNDUzNWY0MWYxNDU2M2E4OTYKIgiGiLuC_Yi83mQQoKKXuQYYswsgDDDv4POlBjgBQOsHSAQQAxoGbWFsaXZhIiAzYzM4ODIzZGE3YTkxOWRlMDEyMmI5ZmE2MTNjNDNmZg',
+    'ssid_ucp_v1': '1.0.0-KDgxM2Q0YTJmN2I4NDg2MWM2MDg2MWJjNDUzNWY0MWYxNDU2M2E4OTYKIgiGiLuC_Yi83mQQoKKXuQYYswsgDDDv4POlBjgBQOsHSAQQAxoGbWFsaXZhIiAzYzM4ODIzZGE3YTkxOWRlMDEyMmI5ZmE2MTNjNDNmZg',
+    'store-idc': 'alisg',
+    'store-country-code': 'iq',
+    'store-country-code-src': 'uid',
+    'tt-target-idc': 'useast1a',
+    'tt-target-idc-sign': 'QgeAtNwMVjZml6Hfr-OT3Wj-Q1krtFBry5F1sFd5oW-Mghnma1tJEzNxjPu-1xYufRXMvmd0p5R6x0pb9LjyWyCCCDRXV5rk2piVRYd91wahgLmqcfCclHbP1GcS4chtGLzLS1CmsUpCN-oZlcDS2qW61xio7FW4Sbsz6-a9sIYDby7sSMQ7B4IHuhlFCw2Vu1Bqrtlsz75Rmu-8_wz6uzpETuAsSgH8GtOJGq74OQByUWSBwdgm0Ro5YUCu3crCpKr-ORcmSON1m-wg_SN7k6UnOvX7BcyYU5I2Cd31b6qlagIuRaBITUmvahe2KVXblCLZY1ePCYyrnsi08pQaMd4A22OKNLAUT-pGP-HGGwuXxzkhqw8kIIe80k8Jfa4MrX4Yly8qCOHYFXjZGv0NCZdTncmwgNU0pJMs71bj8FvR0iD6W3S2wshMB2gv5zNTCGKojjXSGnOPGhBPp6pRL2MYHwFRvyo8KgUj3nszotR0SqEOOsepdkumWR3XFKHT',
+    'last_login_method': 'email',
+    'odin_tt': 'fa0da5d3095f607a1f8db9503b58e682ec814ff2daa10f1ccc8c27a621c7f32603e6f85fcc82f05ea9df1c18c82b4b2bfcbefa769ddb016f5051b73f7bf150be6693de4d2bbef302df3288d37104d04b',
+    'tt_csrf_token': '3pmE8AmN-zB6kTP9KE5lnVgHkCuBFgwktZQA',
+    'tiktok_webapp_theme_source': 'system',
+    'perf_feed_cache': '{%22expireTimestamp%22:1736186400000%2C%22itemIds%22:[%227440733803221568775%22%2C%227422471695409155345%22]}',
+    'ak_bmsc': '7D63E4F9062E26618A6A34A878052EE5~000000000000000000000000000000~YAAQpf7uJaCBKhSUAQAAv/HwNhpKFKVxlrXVQaAVUt0dAfEdrFIhdZj2cRVfcr8+0sVLWTWc9NoF7HaeZt8kP3Tr64kPORpOVrmuBkA7lDqQCz+kV0UhSRNURUGyBj0Wp/dWPQeqgp/1TN5vTo1iDyuHBj+7E/6pmXKTxYo6LT+Q5AKD8bapX9ll82FvAtCVxc/GCx8B03KjR+BI8A0m0yKy8gyYLtYUGh/UNsv69cf/mKZs0DwSCRQ/XvO1ijRHBsZLdmBnTWiIXYh5UVKtAJEn+p8MP8mxx1au+jzjofg7pcH96kRPxKJrKBnT0CPzit/IFdFo5SSsbwpJkGfrtpwHfP9+oWu+dP1AymJI04dkV7vj70PD5rSBReDlolavtEmUmFI6UPoAYQ0=',
+    'ttwid': ttwid,
+    'msToken': msToken,
+    'msToken': msToken,
+    'bm_sv': '4A77C11009E68690A484F4ED40DD8901~YAAQVHkQAmcfUxGUAQAAJhQhNxplNHVJI0/WXSZZEjs68RmAmlzh+B5MwiHJoGxnD2F1mb/l8r7c1vsefy8lHI9vX16a41f3nQTbryjcpzr5tKOINuT/vZdDG/szNoouUj0fpppXrU0UKcANT82Z38BPIFWaH/Vx78XADJcYU70hSWYlGkDL6pNxpLJuxzvgMsgz+GkGt95bBxQN/f0Oe4KAVFSq6V7z1mBPkEaTMoBjCKRFszo85ce7FpNQBUrL~1',
+}
+                try:
+                	response = requests.get('https://www.tiktok.com/api/search/user/full/', params=params, headers=headers,cookies=cookies).json()
+                	
+                except:
+                	continue
+                for usertik in response['user_list']:
+                    follower_count = usertik['user_info']['follower_count']
+                    if follower_count > 1000: 
+	                    ud = (usertik['user_info']['uid'])
+	                    user=(usertik['user_info']['unique_id'])
+	                    email=user
+	                    
+	                    print(f'{email}@hotmail.com:{email}')
+	                    with open('hotmail_tik.txt', 'a') as f:
+	                    	f.write(f'{email}@hotmail.com:{email}\n')            	   
+            except:pass
+threads = []
+for _ in range(100):
+    thread = threading.Thread(target=sufe)
+    thread.start()
+    threads.append(thread)
+for thread in threads:
+    thread.join()
